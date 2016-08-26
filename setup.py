@@ -7,6 +7,8 @@ from setuptools import setup
 
 
 requirements = open('requirements.txt').read().splitlines()
+requirements = ['icdiff-inprocess'] + [
+    r for r in requirements if 'icdiff-inprocess' not in r]
 
 
 def read_text(path):
@@ -50,13 +52,16 @@ setup(
     author='John Lee',
     author_email='john.lee@made.com',
     classifiers=classifiers,
+    dependency_links=[
+        "git://github.com/jlee-made/icdiff#egg=icdiff-inprocess"
+    ],
     description="Readable coloured inline diffs from expects test assertions",
     license="BSD",
     long_description=read_text("README.md"),
     package_dir={"": "src"},
     platforms=["any"],
     py_modules=["icdiff_expects"],
-    requirements=requirements,
+    install_requires=requirements,
     test_suite="test_icdiff_expects",
     version=read_version("src/icdiff_expects.py"),
     zip_safe=True,
