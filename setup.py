@@ -53,7 +53,7 @@ setup(
     author_email='john.lee@made.com',
     classifiers=classifiers,
     dependency_links=[
-        "git://github.com/jlee-made/icdiff#egg=icdiff-inprocess"
+        "git+https://github.com/jlee-made/icdiff/tarball/master#egg=icdiff-inprocess"
     ],
     description="Readable coloured inline diffs from expects test assertions",
     license="BSD",
