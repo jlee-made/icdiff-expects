@@ -24,7 +24,7 @@ In your test code (e.g. a unittest test case method):
 
     ...
 
-    expect = {
+    expected = {
         "spam_id": "32102903",
         "spam_code": "spam",
         "spam_count": 4295,
@@ -41,4 +41,4 @@ In your test code (e.g. a unittest test case method):
         "spamspamspamspam": "2016-08-26T15:21:12Z",
         "spam_transaction": "ABS32402983SAJFDAJFS"
     }
-    expect(got).to(icdiff_expects.equal(got))
+    expect(expected).to(icdiff_expects.equal(got))

@@ -8,7 +8,7 @@ from setuptools import setup
 
 requirements = open('requirements.txt').read().splitlines()
 requirements = ['icdiff-inprocess'] + [
-    r for r in requirements if 'icdiff-inprocess' not in r]
+    r for r in requirements if not r.startswith('-')]
 
 
 def read_text(path):
@@ -53,7 +53,7 @@ setup(
     author_email='john.lee@made.com',
     classifiers=classifiers,
     dependency_links=[
-        "git+https://github.com/jlee-made/icdiff/tarball/master#egg=icdiff-inprocess"
+        "git+https://github.com/jlee-made/icdiff.git@13abb1ae6120f31edcf856c7468268f1eeff6cea#egg=icdiff-inprocess"
     ],
     description="Readable coloured inline diffs from expects test assertions",
     license="BSD",

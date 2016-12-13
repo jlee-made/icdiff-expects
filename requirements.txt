@@ -1,4 +1,4 @@
 expects>=0.8.0
 future>=0.15.2
--e git+https://github.com/jlee-made/icdiff/tarball/master#egg=icdiff-inprocess
+-e git+https://github.com/jlee-made/icdiff.git@13abb1ae6120f31edcf856c7468268f1eeff6cea#egg=icdiff-inprocess
 --process-dependency-links
