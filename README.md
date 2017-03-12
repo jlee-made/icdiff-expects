@@ -9,11 +9,15 @@ readable intraline coloured diffs.
 
 ## Install
 
-To install from the latest release on PyPI:
+I haven't got around to releasing this on PyPI, but you can put this in a
+requirements.txt:
 
 ```
-pip install icdiff-expects
+-e git+https://github.com/jlee-made/icdiff-expects.git@04c834cc6968aab367e2f1f2c0d72faf6d920985#egg=icdiff-expects
+-e git+https://github.com/jlee-made/icdiff.git@13abb1ae6120f31edcf856c7468268f1eeff6cea#egg=icdiff-inprocess
 ```
+
+and then `pip install -r requirements.txt`
 
 ## Use
 
