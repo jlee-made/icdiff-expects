@@ -16,6 +16,8 @@ import icdiff_inprocess
 
 class equal(expects.equal):
 
+    nr_cols = 80
+
     def _failure_message(self, subject, *args):
         if isinstance(self._expected, basestring):
             expected = self._expected
@@ -25,4 +27,4 @@ class equal(expects.equal):
             got = subject
         else:
             got = pprint.pformat(subject)
-        return icdiff_inprocess.diff_text(expected, got)
+        return icdiff_inprocess.diff_text(expected, got, nr_cols=self.nr_cols)
