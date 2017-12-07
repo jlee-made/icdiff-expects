@@ -1,4 +1,4 @@
-from __future__ import absolute_import
+
 from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
@@ -28,3 +28,19 @@ class equal(expects.equal):
         else:
             got = pprint.pformat(subject)
         return icdiff_inprocess.diff_text(expected, got, nr_cols=self.nr_cols)
+
+
+def diff(subject, expected, nr_cols=80):
+    if isinstance(expected, basestring):
+        expected_ = expected
+    else:
+        expected_ = pprint.pformat(expected)
+    if isinstance(subject, basestring):
+        got_ = subject
+    else:
+        got_ = pprint.pformat(subject)
+    return icdiff_inprocess.diff_text(expected_, got_, nr_cols=nr_cols)
+
+
+def print_diff(subject, expected, nr_cols=80):
+    print(diff(subject, expected, nr_cols))
